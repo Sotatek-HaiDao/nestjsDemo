@@ -1,0 +1,36 @@
+version: '3'
+services:
+  node:
+    container_name: hai_node
+    image: node:14.16.1
+    tty: true
+    volumes:
+      - ./:/work
+    ports:
+      - 3000:3000
+    environment:
+      - HOST=0.0.0.0
+    working_dir: /work
+    depends_on:
+      - db
+      - redis
+  db:
+    container_name: hai_mysql
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - db-store:/var/lib/mysql
+      - ./docker/logs:/var/log/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+    ports:
+      - 3336:3306
+  redis:
+    container_name: hai_redis
+    image: redis:latest
+    ports:
+      - 6379:6379
+volumes:
+  db-store:

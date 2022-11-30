@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    container_name: hai_mysql
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+    ports:
+      - ${DB_PORT}:3306
+
+  redis:
+    container_name: hai_redis
+    image: redis:latest
+    ports:
+      - ${REDIS_PORT}:6379

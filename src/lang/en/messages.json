@@ -1,0 +1,4 @@
+{
+  "not_found": "{object} not found.",
+  "bad_request": "Failed to {action}."
+}

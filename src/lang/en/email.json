@@ -1,0 +1,14 @@
+{
+  "invite_user": {
+    "subject": "FIW8RK: Member invitation.",
+    "default_message": "I’m inviting you to join FIW8RK so it’s easy for us to work together. Please set up your account so we can set up new contracts and pay you quickly"
+  },
+  "invite_talent": {
+    "subject": "FIW8RK: Talent invitation.",
+    "default_message": "I’m inviting you to join my job so it’s easy for us to work together. Please set up your account so we can set up new contracts and pay you quickly"
+  },
+  "offer_talent": {
+    "subject": "FIW8RK: Talent offer.",
+    "default_message": "I’m offer you to join my job so it’s easy for us to work together. Please set up your account so we can set up new contracts and pay you quickly"
+  }
+}
